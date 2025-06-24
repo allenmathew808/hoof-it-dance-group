@@ -33,46 +33,48 @@
   </nav>
 
   <!-- Member Gallery -->
-  <section class="py-10 px-4 max-w-7xl mx-auto">
-    <h2 class="text-2xl font-semibold mb-6 text-center">Meet the Hoof-it DC Crew</h2>
-    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 text-center">
+  <section class="py-12 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">Meet the Hoof-it DC Crew</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-center">
 
-      <!-- Dancer 1 -->
-      <div class="cursor-pointer" onclick="openModal('dancer1Modal')">
-        <img src="images/dancer1.jpg" alt="manixon" class="w-16 h-16 mx-auto object-cover rounded-full shadow-md hover:scale-110 transition" />
-        <h3 class="text-sm font-semibold mt-2">manixon</h3>
+        <!-- Dancer 1 -->
+        <div class="cursor-pointer" onclick="openModal('dancer1Modal')">
+          <img src="images/dancer1.jpg" alt="manixon" class="w-24 h-24 mx-auto object-cover rounded-full shadow-md hover:scale-110 transition duration-200" />
+          <h3 class="text-lg font-semibold mt-3">manixon</h3>
+        </div>
+
+        <!-- Dancer 2 -->
+        <div class="cursor-pointer" onclick="openModal('dancer2Modal')">
+          <img src="images/dancer2.jpg" alt="abin" class="w-24 h-24 mx-auto object-cover rounded-full shadow-md hover:scale-110 transition duration-200" />
+          <h3 class="text-lg font-semibold mt-3">abin</h3>
+        </div>
+
+        <!-- Dancer 3 -->
+        <div class="cursor-pointer" onclick="openModal('dancer3Modal')">
+          <img src="images/dancer3.jpg" alt="libin" class="w-24 h-24 mx-auto object-cover rounded-full shadow-md hover:scale-110 transition duration-200" />
+          <h3 class="text-lg font-semibold mt-3">libin</h3>
+        </div>
+
       </div>
-
-      <!-- Dancer 2 -->
-      <div class="cursor-pointer" onclick="openModal('dancer2Modal')">
-        <img src="images/dancer2.jpg" alt="abin" class="w-16 h-16 mx-auto object-cover rounded-full shadow-md hover:scale-110 transition" />
-        <h3 class="text-sm font-semibold mt-2">abin</h3>
-      </div>
-
-      <!-- Dancer 3 -->
-      <div class="cursor-pointer" onclick="openModal('dancer3Modal')">
-        <img src="images/dancer3.jpg" alt="libin" class="w-16 h-16 mx-auto object-cover rounded-full shadow-md hover:scale-110 transition" />
-        <h3 class="text-sm font-semibold mt-2">libin</h3>
-      </div>
-
     </div>
   </section>
 
   <!-- Booking Section -->
-  <section class="bg-white py-10 px-4 shadow-inner">
-    <div class="max-w-xl mx-auto">
-      <h2 class="text-xl font-bold mb-4 text-center">Book Hoof-it DC for Your Event</h2>
+  <section class="bg-white py-12 shadow-inner">
+    <div class="max-w-xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-6 text-center">Book Hoof-it DC for Your Event</h2>
       <form class="space-y-4">
-        <input type="text" placeholder="Your Name" class="w-full border p-2 rounded" required />
-        <input type="email" placeholder="Email" class="w-full border p-2 rounded" required />
-        <input type="date" class="w-full border p-2 rounded" required />
-        <textarea placeholder="Event Details" rows="4" class="w-full border p-2 rounded" required></textarea>
-        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Submit Booking</button>
+        <input type="text" placeholder="Your Name" class="w-full border border-gray-300 p-2 rounded" required />
+        <input type="email" placeholder="Email" class="w-full border border-gray-300 p-2 rounded" required />
+        <input type="date" class="w-full border border-gray-300 p-2 rounded" required />
+        <textarea placeholder="Event Details" rows="4" class="w-full border border-gray-300 p-2 rounded" required></textarea>
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Submit Booking</button>
       </form>
     </div>
   </section>
 
-  <!-- Dancer 1 Modal -->
+  <!-- Modals -->
   <div id="dancer1Modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70 flex">
     <div class="bg-white p-6 rounded-xl shadow-xl max-w-md w-full relative animate-fade-in">
       <button onclick="closeModal('dancer1Modal')" class="absolute top-3 right-3 text-gray-500 hover:text-black text-2xl">&times;</button>
@@ -84,7 +86,6 @@
     </div>
   </div>
 
-  <!-- Dancer 2 Modal -->
   <div id="dancer2Modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70 flex">
     <div class="bg-white p-6 rounded-xl shadow-xl max-w-md w-full relative animate-fade-in">
       <button onclick="closeModal('dancer2Modal')" class="absolute top-3 right-3 text-gray-500 hover:text-black text-2xl">&times;</button>
@@ -96,7 +97,6 @@
     </div>
   </div>
 
-  <!-- Dancer 3 Modal -->
   <div id="dancer3Modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70 flex">
     <div class="bg-white p-6 rounded-xl shadow-xl max-w-md w-full relative animate-fade-in">
       <button onclick="closeModal('dancer3Modal')" class="absolute top-3 right-3 text-gray-500 hover:text-black text-2xl">&times;</button>
@@ -121,16 +121,16 @@
   </script>
 
   <!-- Footer -->
-  <footer class="bg-white mt-12 shadow-inner">
-    <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+  <footer class="bg-white mt-16 shadow-inner">
+    <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
       <div class="text-center md:text-left">
         <h2 class="text-xl font-bold text-blue-600">Hoof-it DC</h2>
         <p class="text-gray-500 text-sm">&copy; 2025 Hoof-it DC. All rights reserved.</p>
       </div>
-      <div class="space-x-4">
-        <a href="index.html" class="text-gray-600 hover:text-blue-600 text-sm">Home</a>
-        <a href="about.html" class="text-gray-600 hover:text-blue-600 text-sm">About</a>
-        <a href="career.html" class="text-gray-600 hover:text-blue-600 text-sm">Career</a>
+      <div class="space-x-4 text-sm">
+        <a href="index.html" class="text-gray-600 hover:text-blue-600">Home</a>
+        <a href="about.html" class="text-gray-600 hover:text-blue-600">About</a>
+        <a href="career.html" class="text-gray-600 hover:text-blue-600">Career</a>
       </div>
       <div class="flex space-x-4">
         <a href="https://instagram.com/hoofitdc" target="_blank" aria-label="Instagram">
