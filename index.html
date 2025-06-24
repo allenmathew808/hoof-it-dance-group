@@ -5,17 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hoof-it DC - Home</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @keyframes fade-in {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .animate-fade-in {
+      animation: fade-in 0.2s ease-out;
+    }
+  </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
   <!-- Navigation -->
   <nav class="bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <!-- Logo Placeholder -->
       <div class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold">
-          H
-        </div>
+        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold">H</div>
         <h1 class="text-xl font-bold tracking-wide">Hoof-it DC</h1>
       </div>
       <div class="space-x-4">
@@ -29,63 +35,33 @@
   <!-- Member Gallery -->
   <section class="py-10 px-4 max-w-7xl mx-auto">
     <h2 class="text-2xl font-semibold mb-6 text-center">Meet the Hoof-it DC Crew</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-      <!-- Repeat this block for each member -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition cursor-pointer">
-        <img src="images/member1.jpg" alt="Dancer 1" class="w-full h-48 object-cover">
-        <div class="p-4 text-center">
-          <h3 class="font-bold">Dancer Name</h3>
-          <p class="text-sm text-gray-600">Hip-Hop / Choreographer</p>
-        </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
+      
+      <!-- Dancer 1 -->
+      <div class="cursor-pointer" onclick="openModal('dancer1Modal')">
+        <img src="images/dancer1.jpg" alt="manixon" class="w-40 h-40 mx-auto object-cover rounded-xl shadow-md hover:scale-105 transition">
+        <h3 class="text-lg font-semibold mt-2">manixon</h3>
+        <p class="text-sm text-gray-500">Contemporary Dancer</p>
       </div>
-      <!-- Add more members -->
-       <!-- Dancer Card (Click to open modal) -->
-<div class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition cursor-pointer" onclick="openModal('dancer1')">
-  <img src="images/member2.jpg" alt="Dancer 2" class="w-full h-48 object-cover">
-  <div class="p-4 text-center">
-    <h3 class="font-bold">Jayden Blaze</h3>
-    <p class="text-sm text-gray-600">Hip-Hop / Choreographer</p>
-  </div>
-</div>
 
-<div class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition cursor-pointer" onclick="openModal('dancer1')">
-  <img src="images/member3.jpg" alt="Dancer 3" class="w-full h-48 object-cover">
-  <div class="p-4 text-center">
-    <h3 class="font-bold">Jayden Blaze</h3>
-    <p class="text-sm text-gray-600">Hip-Hop / Choreographer</p>
-  </div>
-</div>
+      <!-- Dancer 2 -->
+      <div class="cursor-pointer" onclick="openModal('dancer2Modal')">
+        <img src="images/dancer2.jpg" alt="abin" class="w-40 h-40 mx-auto object-cover rounded-xl shadow-md hover:scale-105 transition">
+        <h3 class="text-lg font-semibold mt-2">abin</h3>
+        <p class="text-sm text-gray-500">Hip Hop Dancer</p>
+      </div>
+
+      <!-- Dancer 3 -->
+      <div class="cursor-pointer" onclick="openModal('dancer3Modal')">
+        <img src="images/dancer3.jpg" alt="libin" class="w-40 h-40 mx-auto object-cover rounded-xl shadow-md hover:scale-105 transition">
+        <h3 class="text-lg font-semibold mt-2">libin</h3>
+        <p class="text-sm text-gray-500">Afro Fusion Dancer</p>
+      </div>
 
     </div>
   </section>
-<!-- Modal for Dancer Info -->
-<div id="modal-dancer1" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-  <div class="bg-white rounded-lg p-6 w-full max-w-md relative">
-    <!-- Close button -->
-    <button onclick="closeModal('dancer1')" class="absolute top-2 right-2 text-gray-500 hover:text-black">&times;</button>
 
-    <!-- Dancer Info -->
-    <h2 class="text-xl font-bold mb-2">Jayden Blaze</h2>
-    <p class="text-sm text-gray-600 mb-4">Specializes in street style and lyrical hip-hop. Available for solo or collaborative performances.</p>
-    <div class="mb-4">
-      <p><strong>Email:</strong> jayden@hoofitdc.com</p>
-      <p><strong>Phone:</strong> (555) 123-4567</p>
-    </div>
-
-    <!-- Booking Form -->
-    <form class="space-y-3">
-      <input type="text" placeholder="Your Name" class="w-full border p-2 rounded" required>
-      <input type="email" placeholder="Your Email" class="w-full border p-2 rounded" required>
-      <input type="date" class="w-full border p-2 rounded" required>
-      <textarea placeholder="Booking Details" rows="3" class="w-full border p-2 rounded" required></textarea>
-      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
-        Book Jayden
-      </button>
-    </form>
-  </div>
-</div>
-
-  <!-- Group Booking -->
+  <!-- Group Booking Section -->
   <section class="bg-white py-10 px-4 shadow-inner">
     <div class="max-w-xl mx-auto">
       <h2 class="text-xl font-bold mb-4 text-center">Book Hoof-it DC for Your Event</h2>
@@ -94,61 +70,88 @@
         <input type="email" placeholder="Email" class="w-full border p-2 rounded" required>
         <input type="date" class="w-full border p-2 rounded" required>
         <textarea placeholder="Event Details" rows="4" class="w-full border p-2 rounded" required></textarea>
-        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
-          Submit Booking
-        </button>
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Submit Booking</button>
       </form>
     </div>
   </section>
 
-<script>
-  function openModal(id) {
-    document.getElementById(`modal-${id}`).classList.remove('hidden');
-    document.getElementById(`modal-${id}`).classList.add('flex');
-  }
-
-  function closeModal(id) {
-    document.getElementById(`modal-${id}`).classList.remove('flex');
-    document.getElementById(`modal-${id}`).classList.add('hidden');
-  }
-</script>
-
-
-<!-- Footer -->
-<footer class="bg-white mt-12 shadow-inner">
-  <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-    
-    <!-- Left -->
-    <div class="text-center md:text-left">
-      <h2 class="text-xl font-bold text-blue-600">Hoof-it DC</h2>
-      <p class="text-gray-500 text-sm">&copy; 2025 Hoof-it DC. All rights reserved.</p>
-    </div>
-
-    <!-- Center Navigation -->
-    <div class="space-x-4">
-      <a href="index.html" class="text-gray-600 hover:text-blue-600 text-sm">Home</a>
-      <a href="about.html" class="text-gray-600 hover:text-blue-600 text-sm">About</a>
-      <a href="career.html" class="text-gray-600 hover:text-blue-600 text-sm">Career</a>
-    </div>
-
-    <!-- Right Social Media -->
-    <div class="flex space-x-4">
-      <!-- Instagram -->
-      <a href="https://instagram.com/hoofitdc" target="_blank" aria-label="Instagram">
-        <svg class="w-5 h-5 text-gray-600 hover:text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M7.75 2C4.4 2 2 4.4 2 7.75v8.5C2 19.6 4.4 22 7.75 22h8.5c3.35 0 5.75-2.4 5.75-5.75v-8.5C22 4.4 19.6 2 16.25 2h-8.5zM12 7.25A4.75 4.75 0 1 1 7.25 12 4.75 4.75 0 0 1 12 7.25zm0 1.5a3.25 3.25 0 1 0 3.25 3.25A3.25 3.25 0 0 0 12 8.75zm4.25-.5a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"></path>
-        </svg>
-      </a>
-      <!-- TikTok -->
-      <a href="https://tiktok.com/@hoofitdc" target="_blank" aria-label="TikTok">
-        <svg class="w-5 h-5 text-gray-600 hover:text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M16 3a5 5 0 0 0 5 5v3a8 8 0 1 1-9-7.75V12a3 3 0 1 0 3 3V3h1z"></path>
-        </svg>
-      </a>
+  <!-- Dancer 1 Modal -->
+  <div id="dancer1Modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70 flex">
+    <div class="bg-white p-6 rounded-xl shadow-xl max-w-md w-full relative animate-fade-in">
+      <button onclick="closeModal('dancer1Modal')" class="absolute top-3 right-3 text-gray-500 hover:text-black text-2xl">&times;</button>
+      <img src="images/dancer1.jpg" alt="manixon" class="w-32 h-32 object-cover rounded-full shadow mb-4 mx-auto">
+      <h2 class="text-2xl font-bold mb-1 text-center">manixon</h2>
+      <p class="text-center text-sm text-gray-500 mb-3">Contemporary Dancer</p>
+      <p class="text-sm text-gray-700 text-center">
+        Aisha brings grace and emotion to the stage, blending storytelling with movement.
+      </p>
     </div>
   </div>
-</footer>
 
+  <!-- Dancer 2 Modal -->
+  <div id="dancer2Modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70 flex">
+    <div class="bg-white p-6 rounded-xl shadow-xl max-w-md w-full relative animate-fade-in">
+      <button onclick="closeModal('dancer2Modal')" class="absolute top-3 right-3 text-gray-500 hover:text-black text-2xl">&times;</button>
+      <img src="images/dancer2.jpg" alt="abin" class="w-32 h-32 object-cover rounded-full shadow mb-4 mx-auto">
+      <h2 class="text-2xl font-bold mb-1 text-center">abin</h2>
+      <p class="text-center text-sm text-gray-500 mb-3">Hip Hop Dancer</p>
+      <p class="text-sm text-gray-700 text-center">
+        Jayden’s explosive moves and freestyle technique captivate every crowd.
+      </p>
+    </div>
+  </div>
 
+  <!-- Dancer 3 Modal -->
+  <div id="dancer3Modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70 flex">
+    <div class="bg-white p-6 rounded-xl shadow-xl max-w-md w-full relative animate-fade-in">
+      <button onclick="closeModal('dancer3Modal')" class="absolute top-3 right-3 text-gray-500 hover:text-black text-2xl">&times;</button>
+      <img src="images/dancer3.jpg" alt="libin" class="w-32 h-32 object-cover rounded-full shadow mb-4 mx-auto">
+      <h2 class="text-2xl font-bold mb-1 text-center">libin</h2>
+      <p class="text-center text-sm text-gray-500 mb-3">Afro Fusion Dancer</p>
+      <p class="text-sm text-gray-700 text-center">
+        Leila fuses Afrobeat rhythms with bold choreography and unstoppable charisma.
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal Logic -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+  </script>
+
+  <!-- Footer -->
+  <footer class="bg-white mt-12 shadow-inner">
+    <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+      <div class="text-center md:text-left">
+        <h2 class="text-xl font-bold text-blue-600">Hoof-it DC</h2>
+        <p class="text-gray-500 text-sm">&copy; 2025 Hoof-it DC. All rights reserved.</p>
+      </div>
+      <div class="space-x-4">
+        <a href="index.html" class="text-gray-600 hover:text-blue-600 text-sm">Home</a>
+        <a href="about.html" class="text-gray-600 hover:text-blue-600 text-sm">About</a>
+        <a href="career.html" class="text-gray-600 hover:text-blue-600 text-sm">Career</a>
+      </div>
+      <div class="flex space-x-4">
+        <a href="https://instagram.com/hoofitdc" target="_blank" aria-label="Instagram">
+          <svg class="w-5 h-5 text-gray-600 hover:text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M7.75 2C4.4 2 2 4.4 2 7.75v8.5C2 19.6 4.4 22 7.75 22h8.5c3.35 0 5.75-2.4 5.75-5.75v-8.5C22 4.4 19.6 2 16.25 2h-8.5zM12 7.25A4.75 4.75 0 1 1 7.25 12 4.75 4.75 0 0 1 12 7.25zm0 1.5a3.25 3.25 0 1 0 3.25 3.25A3.25 3.25 0 0 0 12 8.75zm4.25-.5a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"></path>
+          </svg>
+        </a>
+        <a href="https://tiktok.com/@hoofitdc" target="_blank" aria-label="TikTok">
+          <svg class="w-5 h-5 text-gray-600 hover:text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M16 3a5 5 0 0 0 5 5v3a8 8 0 1 1-9-7.75V12a3 3 0 1 0 3 3V3h1z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
